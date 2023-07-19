@@ -1,4 +1,4 @@
-name: Stretchshop app deploy to EKS
+name: Build and Deploy to EKS
 on:
   push:
     branches: ['main']
