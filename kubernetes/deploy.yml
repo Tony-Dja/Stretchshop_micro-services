@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eks-stretchshop
+  labels:
+    app: eks-stretchshop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eks-stretchshop
+  template:
+    metadata:
+      labels:
+        app: eks-stretchshop
+    spec:
+      containers:
+        - name: stretchshop
+          image: 885801475464.dkr.ecr.eu-west-3.amazonaws.com/ecr-stretchshop:stretchshop
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
